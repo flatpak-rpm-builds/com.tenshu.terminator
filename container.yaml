@@ -1,0 +1,17 @@
+compose:
+    modules:
+    - com.tenshu.terminator:master
+flatpak:
+    id: com.tenshu.terminator
+    branch: stable
+    command: terminator
+    rename-icon: terminator
+    rename-desktop-file: terminator.desktop
+    copy-icon: true
+    finish-args: |-
+        --share=ipc
+        --socket=fallback-x11
+        --socket=wayland
+        --filesystem=~/.config/terminator
+        --own-name=com.tenshu.terminator
+        --talk-name=org.freedesktop.Flatpak

@@ -1,0 +1,58 @@
+---
+document: modulemd
+version: 2
+data:
+  summary: Terminator - Multiple GNOME terminals in one window
+  description: >- 
+          Terminator is a program that allows users to set up flexible arrangements of GNOME terminals.
+          It is aimed at those who normally arrange lots of terminals near each other, but don't want to use a frame based window manager.
+  license:
+    module:
+    - MIT
+  dependencies:
+  - buildrequires:
+      flatpak-common: [f33]
+      flatpak-runtime: [f33]
+      platform: [f33]
+    requires:
+      flatpak-common: [f33]
+      flatpak-runtime: [f33]
+      platform: [f33]
+  profiles: 
+    default:
+      rpms:
+      - terminator
+
+  buildopts:
+    rpms:
+      macros: |
+              %__os_install_post    \
+                  /usr/lib/rpm/brp-python-bytecompile %{__strip} \
+              %{nil}
+  components:
+    rpms:
+      vte291: 
+        rationale: Runtime dependency
+        ref: f33
+      pygobject3: 
+        rationale: Runtime dependency
+        ref: f33
+      dbus-python: 
+        rationale: Runtime dependency
+        ref: f33
+      python-configobj: 
+        rationale: Runtime dependency
+        ref: f33
+      python-psutil: 
+        rationale: Runtime dependency
+        ref: f33
+      pycairo: 
+        rationale: Runtime dependency
+        ref: f33
+      keybinder3: 
+        rationale: Runtime dependency
+        ref: f33
+      terminator: 
+        rationale: Application package
+        ref: f33 
+        buildorder: 10
