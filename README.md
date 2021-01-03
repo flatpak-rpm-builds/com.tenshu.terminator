@@ -1,9 +1,9 @@
-# com.tenshu.terminator
+# net.tenshu.Terminator2
 
 
 rpm based flatpak for terminator
 
 install pre-built:
-`flatpak-module install com.tenshu.terminator-master-3320201231175750.oci.tar.gz` 
+`flatpak-module install terminator-master-3320210103192607.oci.tar.gz` 
 
 build: ` flatpak-module build-container --from-local --install`
