@@ -1,8 +1,8 @@
 compose:
     modules:
-    - com.tenshu.terminator:master
+    - terminator:master
 flatpak:
-    id: com.tenshu.terminator
+    id: net.tenshu.Terminator2
     branch: stable
     command: terminator
     rename-icon: terminator
@@ -13,5 +13,5 @@ flatpak:
         --socket=fallback-x11
         --socket=wayland
         --filesystem=~/.config/terminator
-        --own-name=com.tenshu.terminator
+        --own-name=net.tenshu.Terminator2
         --talk-name=org.freedesktop.Flatpak
