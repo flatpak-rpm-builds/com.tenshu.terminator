@@ -12,6 +12,6 @@ flatpak:
         --share=ipc
         --socket=fallback-x11
         --socket=wayland
-        --filesystem=~/.config/terminator
+        --filesystem=home
         --own-name=net.tenshu.Terminator2
         --talk-name=org.freedesktop.Flatpak
